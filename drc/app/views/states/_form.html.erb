@@ -1,0 +1,27 @@
+<%= form_for(@state, :html=>{:class=>"form"}) do |f| %>
+    <fieldset>
+      <legend>Estados</legend>
+      <% if @state.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@state.errors.count, "error") %>  problema ao salvar estado:</h2>
+
+            <ul>
+              <% @state.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="row control-group">
+
+
+        <%= f.text_field :name,:class=>"span5", :placeholder=>"Nome" %>
+        <%= f.text_field :acronym,:class=>"span1", :placeholder=>"Sigla" %>
+      </div>
+      <div class="row control-group">
+        <%= f.submit :class=> "btn btn-primary btn-large" %>
+        <%= link_to 'Voltar', states_path, :class=> "btn btn-primary btn-large"  %>
+      </div>
+    </fieldset>
+<% end %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  client: 
+  value: 9.99
+  order_date: 2013-02-04
+  delivery_date: 2013-02-04
+
+two:
+  client: 
+  value: 9.99
+  order_date: 2013-02-04
+  delivery_date: 2013-02-04

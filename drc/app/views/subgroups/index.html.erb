@@ -1,0 +1,22 @@
+<h1>Listing subgroups</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @subgroups.each do |subgroup| %>
+  <tr>
+    <td><%= subgroup.name %></td>
+    <td><%= link_to '',edit_subgroup_path(subgroup),  :class=>"icon-edit" %></td>
+    <td><%= link_to '',subgroup , :class=>"icon-trash", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Subgroup', new_subgroup_path %>

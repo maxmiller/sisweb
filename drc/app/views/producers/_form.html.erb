@@ -1,0 +1,40 @@
+<%= form_for(@producer,:html=>{:class=>"form"}) do |f| %>
+    <fieldset>
+      <legend>Fornecedor</legend><% if @producer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@producer.errors.count, "error") %>  problema ao salvar fornecedor:</h2>
+
+      <ul>
+      <% @producer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="row control-group">
+      <%= f.text_field :name ,:class=>"span8", :placeholder=>"Nome" %>
+      <%= f.text_field :address,:class=>"span8", :placeholder=>"Endereço" %>
+
+      <%= f.text_field :cpf ,:class=>"span2", :placeholder=>"CPF"%>
+      <%= f.text_field :cnpj ,:class=>"span3", :placeholder=>"CNPJ" %>
+    </div>
+    <div class="row control-group">
+      <%= f.text_field :city,:class=>"input-large", :placeholder=>"Cidade" %>
+      <%= f.collection_select :state_id, State.all, :id, :name ,:class=>"btn" %>
+    </div>
+    <div class="row control-group">
+      <%= f.text_field :phone_number,:class=>"span2", :placeholder=>"Telefone" %>
+      <%= f.text_field :mobile_number,:class=>"span2", :placeholder=>"Celular" %>
+    </div>
+    <div class="row control-group">
+
+      <%= f.text_field :email,:class=>"span4", :placeholder=>"Email"  %>
+    </div>
+    <div class="row control-group">
+      <%= f.submit :class=> "btn btn-primary btn-large" %>
+      <%= link_to 'Voltar', producers_path, :class=> "btn btn-primary btn-large"  %>
+    </div>
+       </fieldset>
+
+<% end %>

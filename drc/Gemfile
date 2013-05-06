@@ -31,6 +31,8 @@ group :assets do
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
   gem 'jquery-ui-themes'
+  gem 'therubyracer'
+
  # gem 'rails3-jquery-autocomplete'
 end
 

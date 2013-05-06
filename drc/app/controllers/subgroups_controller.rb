@@ -44,7 +44,7 @@ class SubgroupsController < ApplicationController
 
     respond_to do |format|
       if @subgroup.save
-        format.html { redirect_to @subgroup, notice: 'Subgroup was successfully created.' }
+        format.html { redirect_to subgroups_path, notice: 'Subgroupo criado.' }
         format.json { render json: @subgroup, status: :created, location: @subgroup }
       else
         format.html { render action: "new" }

@@ -1,4 +1,7 @@
 Drc::Application.routes.draw do
+  resources :inventory_entries
+
+
   resources :order_items
 
 

@@ -1,0 +1,31 @@
+<h1>Listing inventory_entries</h1>
+
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Sale price</th>
+    <th>Purchase price</th>
+    <th>Amount</th>
+    <th>Lot</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @inventory_entries.each do |inventory_entry| %>
+  <tr>
+    <td><%= inventory_entry.product %></td>
+    <td><%= inventory_entry.sale_price %></td>
+    <td><%= inventory_entry.purchase_price %></td>
+    <td><%= inventory_entry.amount %></td>
+    <td><%= inventory_entry.lot %></td>
+    <td><%= link_to 'Show', inventory_entry %></td>
+    <td><%= link_to 'Edit', edit_inventory_entry_path(inventory_entry) %></td>
+    <td><%= link_to 'Destroy', inventory_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Inventory entry', new_inventory_entry_path %>

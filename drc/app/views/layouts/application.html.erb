@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Drc</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
 
 
@@ -10,8 +10,56 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">
 
-<%= yield %>
+  <div class="btn-toolbar">
+    <div class="btn-group">
+      <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+        Estoque
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <!-- dropdown menu links -->
+        <li><%= link_to "Produtos", products_path %></li>
+        <li><%= link_to "Fabricante", producers_path %></li>
+        <li><%= link_to "Grupo de Produto", groups_path %></li>
+        <li><%= link_to "SubGrupo de Produto", subgroups_path %></li>
+        <li><%= link_to "Clientes", clients_path %></li>
 
+
+      </ul>
+    </div>
+
+
+    <div class="btn-group">
+      <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+      Segurança
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <!-- dropdown menu links -->
+        <li><%= link_to "Usuários", users_path %></li>
+      </ul>
+    </div>
+
+    <% if user_signed_in? %>
+        <div class="btn-group">
+
+          <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+          Administração
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+            </li>
+          </ul>
+        </div>
+    <% end %>
+  </div>
+
+  <!--Body content-->
+  <%= yield %>
+</div>
 </body>
 </html>

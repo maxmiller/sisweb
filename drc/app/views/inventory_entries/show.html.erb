@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= @inventory_entry.product %>
+</p>
+
+<p>
+  <b>Sale price:</b>
+  <%= @inventory_entry.sale_price %>
+</p>
+
+<p>
+  <b>Purchase price:</b>
+  <%= @inventory_entry.purchase_price %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @inventory_entry.amount %>
+</p>
+
+<p>
+  <b>Lot:</b>
+  <%= @inventory_entry.lot %>
+</p>
+
+
+<%= link_to 'Edit', edit_inventory_entry_path(@inventory_entry) %> |
+<%= link_to 'Back', inventory_entries_path %>

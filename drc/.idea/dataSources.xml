@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" compressed="false" hash="1915736339" />
+  <component name="DataSourceManagerImpl" format="xml" hash="4089821339">
+    <data-source source="LOCAL" name="Rails drc: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="e496951d-ec6a-4364-9d36-eba5e71c015d">
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/sisweb_development</jdbc-url>
+      <user-name>sisweb</user-name>
+      <user-password>dfd9dfc3dfd9dfdddfcfdfc8df9bdf99</user-password>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/mysql-connector-license.txt</url>
+        </library>
+        <library>
+          <url>jar://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/mysql-connector-java-5.1.18-bin.jar!/</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="Rails drc: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="f1fd6021-708c-4fd6-a081-9d532fbf1e6c">
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/sisweb_production</jdbc-url>
+      <user-name>sisweb</user-name>
+      <user-password>dfd9dfc3dfd9dfdddfcfdfc8df9bdf99</user-password>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/mysql-connector-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/mysql-connector-java-5.1.18-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="Rails drc: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="a5cce232-4a90-4ea0-94df-3623d1cfe16f">
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/sisweb_test</jdbc-url>
+      <user-name>sisweb</user-name>
+      <user-password>dfd9dfc3dfd9dfdddfcfdfc8df9bdf99</user-password>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/mysql-connector-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/mysql-connector-java-5.1.18-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
 </project>
 

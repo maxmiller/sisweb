@@ -5,7 +5,7 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'mysql2'
 gem 'devise'
 gem 'cancan'
 gem 'rolify'
@@ -13,7 +13,7 @@ gem 'brcpfcnpj'
 gem 'brdinheiro'
 gem 'validates_email_format_of'
 gem 'friendly_id'
-
+gem 'responder'
 gem 'nested_form'
 
 # Gems used only for assets and not required

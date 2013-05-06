@@ -8,6 +8,12 @@ class Ability
       can :manage, :all
     elsif user.roles? :vendedor
       can :manage, State
+      can :manage, Client
+      can :manage, Producer
+      can :manage, Group
+      can :manage, Subgroup
+      can :manage, Order
+      can :manage, OrderItem
     else
       can :read, :all
     end

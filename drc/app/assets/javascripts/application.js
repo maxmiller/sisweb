@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-modal
+//= require bootstrap-button
+//= require bootstrap-dropdown
 //= require jquery-ui
 //= require jquery.ui.datepicker
 //= require jquery.ui.datepicker-pt-BR

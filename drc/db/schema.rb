@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130216005443) do
+ActiveRecord::Schema.define(:version => 20130426183633) do
 
   create_table "clients", :force => true do |t|
     t.string   "name"
     t.string   "address"
     t.string   "cep"
-    t.integer  "state_id"
+    t.integer  "state_id",     :null => false
     t.string   "city"
     t.string   "cpf"
     t.string   "phone_number"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20130216005443) do
     t.datetime "updated_at",   :null => false
   end
 
+  add_index "clients", ["state_id"], :name => "fk_clients_states"
   add_index "clients", ["state_id"], :name => "index_clients_on_state_id"
 
   create_table "groups", :force => true do |t|
@@ -34,6 +35,18 @@ ActiveRecord::Schema.define(:version => 20130216005443) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "inventory_entries", :force => true do |t|
+    t.integer  "product_id"
+    t.decimal  "sale_price",     :precision => 10, :scale => 0
+    t.decimal  "purchase_price", :precision => 10, :scale => 0
+    t.integer  "amount"
+    t.integer  "lot"
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+  end
+
+  add_index "inventory_entries", ["product_id"], :name => "index_inventory_entries_on_product_id"
+
   create_table "order_items", :force => true do |t|
     t.integer  "product_id"
     t.integer  "order_id"
@@ -42,19 +55,22 @@ ActiveRecord::Schema.define(:version => 20130216005443) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "order_items", ["order_id"], :name => "fk_order"
   add_index "order_items", ["order_id"], :name => "index_order_items_on_order_id"
+  add_index "order_items", ["product_id"], :name => "fk_product"
   add_index "order_items", ["product_id"], :name => "index_order_items_on_product_id"
 
   create_table "orders", :force => true do |t|
     t.integer  "client_id"
-    t.decimal  "value"
+    t.decimal  "value",         :precision => 10, :scale => 0
     t.date     "order_date"
     t.date     "delivery_date"
     t.integer  "user_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
   end
 
+  add_index "orders", ["client_id"], :name => "fk_client"
   add_index "orders", ["client_id"], :name => "index_orders_on_client_id"
   add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
 
